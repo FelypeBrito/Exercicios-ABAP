@@ -1,0 +1,27 @@
+
+*&---------------------------------------------------------------------*
+*& Exercicio 012
+*&---------------------------------------------------------------------*
+
+REPORT ZPR_EXERC_FB_012.
+
+*Declare a table type with all components of the global structure SFLIGHT.
+
+  TYPES TABLE_SFLIGHT TYPE TABLE OF SFLIGHT.
+
+  DATA TI_SFLIGHT TYPE TABLE_SFLIGHT.
+
+*Solution
+  DATA SFLIGHT_WORK_AREA TYPE LINE OF TABLE_SFLIGHT.
+
+START-OF-SELECTION.
+  SFLIGHT_WORK_AREA-CARRID = 'AA'.
+  SFLIGHT_WORK_AREA-CONNID = '0017'.
+  SFLIGHT_WORK_AREA-FLDATE = 20131225. "Christmas
+  SFLIGHT_WORK_AREA-PRICE = '500.12'.
+  APPEND SFLIGHT_WORK_AREA TO TI_SFLIGHT.
+  SFLIGHT_WORK_AREA-CARRID = 'AA'.
+  SFLIGHT_WORK_AREA-CONNID = '064'.
+  SFLIGHT_WORK_AREA-FLDATE = 20131225.
+  SFLIGHT_WORK_AREA-PRICE = '500.12'.
+  APPEND SFLIGHT_WORK_AREA TO TI_SFLIGHT.

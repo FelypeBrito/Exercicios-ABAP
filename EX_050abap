@@ -1,0 +1,24 @@
+*&---------------------------------------------------------------------*
+*& Exercicio 050
+*&---------------------------------------------------------------------*
+
+REPORT ZPR_EXERC_FB_050.
+
+
+
+*Write an executable program that counts from 1 to 100 and for each multiple of 8, write the
+*message: "The number [number] is a multiple of 8 ".
+
+  DATA LV_COUNT TYPE I VALUE 1.
+
+
+  WRITE / 'Exercicio 050'.
+
+START-OF-SELECTION.
+  WHILE LV_COUNT <= 100.
+    IF ( LV_COUNT MOD 8 ) = 0.
+      WRITE: 'O número ', LV_COUNT, ' é multiplo de 8'.
+      NEW-LINE.
+    ENDIF.
+    ADD 1 TO LV_COUNT.
+  ENDWHILE.
